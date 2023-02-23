@@ -19,7 +19,6 @@ import static java.net.HttpURLConnection.HTTP_OK;
 
 public class ServerRequest {
     private static final String QUERY_URL = "https://rest.coinapi.io/v1/assets";
-    private static final String API_KEY = "ED9C087D-9E40-4335-B3A3-717481597830";
     private static final String API_KEY_NAME = "X-CoinAPI-Key";
     private final Gson gson;
     private final HttpClient client;
@@ -32,7 +31,7 @@ public class ServerRequest {
     public CompletableFuture<ApiResponse<List<Asset>>> getAssets() throws URISyntaxException {
         HttpRequest request = HttpRequest.newBuilder(new URI(QUERY_URL))
                 .GET()
-                .header(API_KEY_NAME, API_KEY)
+                .header(API_KEY_NAME, System.getenv("API_KEY"))
                 .build();
 
         return client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
@@ -44,7 +43,7 @@ public class ServerRequest {
 
         HttpRequest request = HttpRequest.newBuilder(new URI(url))
                 .GET()
-                .header(API_KEY_NAME, API_KEY)
+                .header(API_KEY_NAME, System.getenv("API_KEY"))
                 .build();
 
         return client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
