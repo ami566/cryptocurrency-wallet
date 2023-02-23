@@ -1,0 +1,11 @@
+There's not enough money in your wallet. Sum available: 450.0
+bg.sofia.uni.fmi.mjt.cryptowallet.exceptions.NotEnoughMoneyInWalletException: There's not enough money in your wallet. Sum available: 450.0
+	at bg.sofia.uni.fmi.mjt.cryptowallet.wallet.Wallet.buyCrypto(Wallet.java:45)
+	at bg.sofia.uni.fmi.mjt.cryptowallet.users.User.buyCrypto(User.java:54)
+	at bg.sofia.uni.fmi.mjt.cryptowallet.users.UsersDatabase.buyCrypto(UsersDatabase.java:94)
+	at bg.sofia.uni.fmi.mjt.cryptowallet.command.CommandExecutor.buyCrypto(CommandExecutor.java:152)
+	at bg.sofia.uni.fmi.mjt.cryptowallet.command.CommandExecutor.execute(CommandExecutor.java:42)
+	at bg.sofia.uni.fmi.mjt.cryptowallet.Server.executeCommand(Server.java:148)
+	at bg.sofia.uni.fmi.mjt.cryptowallet.Server.start(Server.java:69)
+	at Main.main(Main.java:32)
+
